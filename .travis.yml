@@ -4,11 +4,11 @@ php:
   - "5.6"
 env:
   - QXBROWSER=Firefox QXVERSION=latest
-  - QXBROWSER=Firefox QXVERSION=esr-latest
-  - QXBROWSER=Firefox QXVERSION=beta-latest
-  - QXBROWSER=Chrome_travis_ci QXVERSION=stable
-  - QXBROWSER=Chrome_travis_ci QXVERSION=beta
-  - QXBROWSER=Chrome_travis_ci QXVERSION=unstable
+  #- QXBROWSER=Firefox QXVERSION=esr-latest
+  #- QXBROWSER=Firefox QXVERSION=beta-latest
+  #- QXBROWSER=Chrome_travis_ci QXVERSION=stable
+  #- QXBROWSER=Chrome_travis_ci QXVERSION=beta
+  #- QXBROWSER=Chrome_travis_ci QXVERSION=unstable
 
 cache:
   directories:
