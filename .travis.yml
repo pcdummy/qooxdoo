@@ -29,5 +29,8 @@ before_script:
   - sleep 3
 script:
   - ./.travis-test.sh 
+  - ./.travis-build-site.sh
 after_script:
   - "pkill -f 'php -S 0.0.0.0:31323' &> /dev/null"
+after_success:
+  - ./.travis-deploy.sh
