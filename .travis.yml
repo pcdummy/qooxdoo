@@ -29,7 +29,7 @@ before_script:
   - sleep 3
 script:
   - ./.travis-test.sh 
-  - cd $TRAVIS_BUILD_DIR
+  - cd ..
   - ./.travis-build-site.sh
 after_script:
   - "pkill -f 'php -S 0.0.0.0:31323' &> /dev/null"
