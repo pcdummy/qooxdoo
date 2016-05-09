@@ -34,7 +34,5 @@ script:
 after_script:
   - "pkill -f 'php -S 0.0.0.0:31323' &> /dev/null"
 after_success:
-  - if [ "$TRAVIS_BRANCH" != "pages" -o "$TRAVIS_TAG" = "" ]; then echo "Skipping site generation..."; exit 0; fi
   - cd $TRAVIS_BUILD_DIR
-  - ./.travis-build-site.sh
-  - ./.travis-deploy.sh
+  - ./.travis-build-site.sh && ./.travis-deploy.sh

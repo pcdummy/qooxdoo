@@ -5,6 +5,12 @@
 #
 GENERATE="./generate.py -sI"
 TARGET="$PWD/build"
+MASTER="pages"
+
+if [ "$TRAVIS_BRANCH" != "$MASTER" -a "$TRAVIS_TAG" = "" ]; then
+  echo "Skipping site generation for $TRAVIS_BRANCH..."
+  exit 1
+fi
 
 function build_website_api {
   echo "Building website API..."
