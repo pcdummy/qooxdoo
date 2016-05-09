@@ -4,14 +4,10 @@ set -o errexit -o nounset
 
 TARGET="devel"
 
-###TEST >
-#if [ "$TRAVIS_BRANCH" != "master" ]
-#then
-#  echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
+#if [ "$TRAVIS_BRANCH" != "master" ]; then
+#  echo "Skipping build for branch $TRAVIS_BRANCH..."
 #  exit 0
 #fi
-#TARGET="..."
-###TEST <
 
 rev=$(git rev-parse --short HEAD)
 mkdir deploy && cd deploy
@@ -28,6 +24,7 @@ git merge upstream/master
 rm -rf "$TARGET" &> /dev/null
 cp -a ../build "$TARGET"
 
+#TODO: When we've some more control over the qx DNS records, we can add a CNAME here...
 #echo "qooxdoo.org" > CNAME
 
 touch .
