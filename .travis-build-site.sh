@@ -24,7 +24,7 @@ function build_mobile_showcase {
   echo "Building mobile showcase..."
   (
     cd application/mobileshowcase
-    $GENERATE build && cp -a build "$TARGET/mobileshowcase"
+    $GENERATE build && cp -a build-indigo "$TARGET/mobileshowcase"
   )
 }
 
@@ -40,7 +40,7 @@ function build_website_widgetbrowser {
   echo "Building website widget browser..."
   (
     cd application/websitewidgetbrowser
-    grunt build && cp -a build "$TARGET/websitewidgetbrowser"
+    grunt build && mkdir "$TARGET/websitewidgetbrowser" && cp -a demo script *.js *.css index.html "$TARGET/websitewidgetbrowser"
   )
 }
 
