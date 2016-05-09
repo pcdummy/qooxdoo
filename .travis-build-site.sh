@@ -98,9 +98,9 @@ function build_manual {
   echo "Building manual..."
   (
     cd documentation/manual
-    make html && cp -a build/html "$TARGET"
-    make latexpdf && cp -a build/latex/qooxdoo.pdf "$TARGET"
-    make epub && cp -a build/epub/qooxdoo.epub "$TARGET"
+    make html && cp -r build/html/* "$TARGET"
+    make latexpdf && cp build/latex/qooxdoo.pdf "$TARGET"
+    make epub && cp build/epub/qooxdoo.epub "$TARGET"
   )
 }
 
